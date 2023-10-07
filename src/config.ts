@@ -8,7 +8,7 @@ export default {
   type: Phaser.AUTO,
   ...SHARED_CONFIG,
   parent: 'game',
-  backgroundColor: 'transparent',
+  backgroundColor: '#fff',
   scale: {
     width: 800,
     height: 600,

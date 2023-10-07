@@ -13,16 +13,18 @@ class Preload extends PhaserSceneTool {
       frameHeight: 32,
     });
 
-    this.loadingImagesMockup();
+    this.load.image("karin", "assets/karin.png");
+
+    // this.loadingImagesMockup();
 
     // this.load.audio("jumpSound", "assets/sounds/jump.mp3");
   }
 
-  loadingImagesMockup() {
-    [...Array(5000).keys()].forEach((i) => {
-      this.load.image(`catWalking${i}`, "assets/cat_walking.png");
-    });
-  }
+  // loadingImagesMockup() {
+  //   [...Array(5000).keys()].forEach((i) => {
+  //     this.load.image(`catWalking${i}`, "assets/cat_walking.png");
+  //   });
+  // }
 
   loadLoadingScreen() {
     let progressBar = this.add.graphics();
@@ -97,7 +99,7 @@ class Preload extends PhaserSceneTool {
 
     setTimeout(() => {
       this.scene.start("GameScene");
-    }, 3000);
+    }, 100);
   }
 }
 
