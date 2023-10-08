@@ -2,10 +2,10 @@ class NumberParticle extends Phaser.Physics.Arcade.Sprite {
   constructor(scene, x, y) {
     super(scene, x, y, "number-particle");
 
-    x -= 50
-    y -= 10
+    const x_offset = x - 50
+    const y_offset = y - 10
 
-    this.text = this.scene.add.text(x, y, `${x}, ${y}`, {
+    this.text = this.scene.add.text(x_offset, y_offset, `${x}, ${y}`, {
       fontSize: "20px",
       color: "#000",
     });
