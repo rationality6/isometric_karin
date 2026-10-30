@@ -19,26 +19,13 @@ class Tile {
     }
   }
 
-  isometricSqure(tileSize) {
-    return [
-      this.tileSize,
-      0,
-      0,
-      this.tileSize / 2,
-      0 + this.tileSize,
-      this.tileSize,
-      0 + this.tileSize * 2,
-      this.tileSize / 2,
-    ];
-  }
-
   placetile(x, y) {
     const isoPoint = this.cartesianToIsometric(new Phaser.Geom.Point(x, y));
 
     const tile = this.scene.add.polygon(
       isoPoint.x,
       isoPoint.y,
-      this.isometricSqure(),
+      this.isometricSquare(),
       0xeeeeee
     );
 
@@ -47,7 +34,7 @@ class Tile {
     tile
       .setOrigin(0.5, 0.5)
       .setInteractive(
-        new Phaser.Geom.Polygon(this.isometricSqure(this.tileSize)),
+        new Phaser.Geom.Polygon(this.isometricSquare(this.tileSize)),
         Phaser.Geom.Polygon.Contains
       )
       .on("pointerover", (event) => {
@@ -79,7 +66,7 @@ class Tile {
     return tempPt;
   }
 
-  isometricSqure() {
+  isometricSquare() {
     return [
       this.tileSize,
       0,
