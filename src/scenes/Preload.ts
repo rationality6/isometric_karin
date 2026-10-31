@@ -14,6 +14,7 @@ class Preload extends PhaserSceneTool {
     });
 
     this.load.image("karin", "assets/karin.png");
+    this.load.image("sky", "assets/sky.png");
 
     // this.loadingImagesMockup();
 
